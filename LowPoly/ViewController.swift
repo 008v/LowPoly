@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         view.addSubview(scrollView)
 
         /* load image */
-        guard let image = UIImage(contentsOfFile: Bundle.main.path(forResource: "skull", ofType: "jpg")!) else {
+        guard let image = UIImage(contentsOfFile: Bundle.main.path(forResource: "pool", ofType: "jpg")!) else {
             return
         }
         
