@@ -24,6 +24,7 @@
 		240A90B42179CED700FC29C6 /* skull.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 240A90B32179CED600FC29C6 /* skull.jpg */; };
 		240A90B82179F76700FC29C6 /* skull.png in Resources */ = {isa = PBXBuildFile; fileRef = 240A90B72179F76700FC29C6 /* skull.png */; };
 		240A90BA2179FE4300FC29C6 /* pool.png in Resources */ = {isa = PBXBuildFile; fileRef = 240A90B92179FE4300FC29C6 /* pool.png */; };
+		240A90BC217D878000FC29C6 /* Incircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240A90BB217D878000FC29C6 /* Incircle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		240A90B32179CED600FC29C6 /* skull.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = skull.jpg; sourceTree = "<group>"; };
 		240A90B72179F76700FC29C6 /* skull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skull.png; sourceTree = "<group>"; };
 		240A90B92179FE4300FC29C6 /* pool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pool.png; sourceTree = "<group>"; };
+		240A90BB217D878000FC29C6 /* Incircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Incircle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				240A90A221787AC000FC29C6 /* Edge.swift */,
 				240A90A121787AC000FC29C6 /* Hash.swift */,
 				240A909D21787ABF00FC29C6 /* Triangle.swift */,
+				240A90BB217D878000FC29C6 /* Incircle.swift */,
 				240A90A021787AC000FC29C6 /* Vertex.swift */,
 				240A9089217879D500FC29C6 /* Main.storyboard */,
 				240A908C217879D700FC29C6 /* Assets.xcassets */,
@@ -178,6 +181,7 @@
 			files = (
 				240A90A521787AC000FC29C6 /* Delaunay.swift in Sources */,
 				240A90A721787AC000FC29C6 /* Hash.swift in Sources */,
+				240A90BC217D878000FC29C6 /* Incircle.swift in Sources */,
 				240A909C21787A8300FC29C6 /* Sobel.swift in Sources */,
 				240A9088217879D500FC29C6 /* ViewController.swift in Sources */,
 				240A9086217879D500FC29C6 /* AppDelegate.swift in Sources */,
