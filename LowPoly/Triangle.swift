@@ -25,10 +25,19 @@ extension Triangle {
         return CGPoint(x: (vertex0.x + vertex1.x + vertex2.x) / 3, y: (vertex0.y + vertex1.y + vertex2.y) / 3)
     }
     
-    public func incentre() -> CGPoint {
-        // TODO:
-        
-        return CGPoint.zero
+    public func incenter() -> CGPoint {
+        let x1 = vertex0.x
+        let y1 = vertex0.y
+        let x2 = vertex1.x
+        let y2 = vertex1.y
+        let x3 = vertex2.x
+        let y3 = vertex2.y
+        let a = sqrt(pow(x2 - x3, 2) + pow(y2 - y3, 2))
+        let b = sqrt(pow(x1 - x3, 2) + pow(y1 - y3, 2))
+        let c = sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2))
+        let incenterX = (a * x1 + b * x2 + c * x3) / (a + b + c)
+        let incenterY = (a * y1 + b * y2 + c * y3) / (a + b + c)
+        return CGPoint(x: incenterX, y: incenterY)
     }
     
     public func toPath() -> CGPath {
