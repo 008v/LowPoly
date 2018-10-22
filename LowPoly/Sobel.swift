@@ -69,7 +69,7 @@ class Sobel: NSObject {
                     Double(kernelY.columns.2.y) * getGray(image: image, x: x + 1, y: y) +
                     Double(kernelY.columns.2.z) * getGray(image: image, x: x + 1, y: y + 1)
                     )
-                let g = sqrt(gx * gx + gy * gy)
+                let g = sqrt(pow(gx, 2) + pow(gy, 2))
                 
                 let bytesIndex = (width * y + x) * 4
                 
