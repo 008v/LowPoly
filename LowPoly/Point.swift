@@ -1,14 +1,14 @@
 //
-//  Vertex.swift
-//  DelaunayTriangulation
+//  Point.swift
+//  LowPoly
 //
 //  Created by WEI QIN on 2018/10/11.
 //  Copyright © 2018 WEI QIN. All rights reserved.
 //
 
-import UIKit
+import CoreGraphics
 
-public struct Vertex {
+public struct Point {
     public let x: Double
     public let y: Double
     
@@ -16,9 +16,14 @@ public struct Vertex {
         self.x = x
         self.y = y
     }
+    
+    public init(x: Int, y: Int) {
+        self.x = Double(x)
+        self.y = Double(y)
+    }
 }
 
-extension Vertex: Hashable {
+extension Point: Hashable {
     public var hashValue: Int {
         var seed = UInt(0)
         hash_combine(seed: &seed, value: UInt(bitPattern: x.hashValue))
@@ -27,20 +32,22 @@ extension Vertex: Hashable {
     }
 }
 
-extension Vertex: Equatable {
-    static public func ==(lhs: Vertex, rhs: Vertex) -> Bool {
+extension Point: Equatable {
+    static public func ==(lhs: Point, rhs: Point) -> Bool {
         return lhs.x == rhs.x && lhs.y == rhs.y
     }
 }
 
-extension Vertex {
+extension Point {
     public func cgPoint() -> CGPoint {
         return CGPoint(x: x, y: y)
     }
     
-    static func random(maxX: Double, maxY: Double) -> Vertex {
-        let x = Double(arc4random_uniform(UInt32(maxX)))
-        let y = Double(arc4random_uniform(UInt32(maxY)))
-        return Vertex(x: x, y: y)
+    public func distance(_ point: Point) -> Double {
+        return sqrt(pow(x - point.x, 2) + pow(y - point.y, 2))
+    }
+    
+    public func isInRect(_ width: Double, height: Double) -> Bool {
+        return !(x < 0 || x >= width || y < 0 || y >= height)
     }
 }

@@ -1,6 +1,6 @@
 //
 //  Hash.swift
-//  DelaunayTriangulation
+//  LowPoly
 //
 //  Created by WEI QIN on 2018/10/12.
 //  Copyright © 2018 WEI QIN. All rights reserved.

@@ -6,13 +6,11 @@
 //  Copyright © 2018 WEI QIN. All rights reserved.
 //
 
-import UIKit
-
 public struct Incircle {
-    public let incenter: Vertex
+    public let incenter: Point
     public let radius: Double
     
-    public init(incenter: Vertex, radius: Double) {
+    public init(incenter: Point, radius: Double) {
         self.incenter = incenter
         self.radius = radius
     }

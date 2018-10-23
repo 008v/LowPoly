@@ -1,6 +1,6 @@
 //
 //  Delaunay.swift
-//  DelaunayTriangulation
+//  LowPoly
 //
 //  Created by WEI QIN on 2018/10/11.
 //  Copyright © 2018 WEI QIN. All rights reserved.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-open class Delaunay: NSObject {
+public class Delaunay: NSObject {
 
-    override init() { }
+    public override init() { }
 
-    fileprivate func supertriangle(_ vertices: [Vertex]) -> [Vertex] {
+    fileprivate func supertriangle(_ vertices: [Point]) -> [Point] {
         
         var xmin = Double(Int32.max)
         var ymin = Double(Int32.max)
@@ -32,12 +32,12 @@ open class Delaunay: NSObject {
         let xmid = xmin + dx * 0.5
         let ymid = ymin + dy * 0.5
         
-        return [Vertex(x: xmid - 20 * dmax, y: ymid - dmax),
-                Vertex(x: xmid, y: ymid + 20 * dmax),
-                Vertex(x: xmid + 20 * dmax, y: ymid - dmax)]
+        return [Point(x: xmid - 20 * dmax, y: ymid - dmax),
+                Point(x: xmid, y: ymid + 20 * dmax),
+                Point(x: xmid + 20 * dmax, y: ymid - dmax)]
     }
     
-    fileprivate func circumcircle(_ i: Vertex, j: Vertex, k: Vertex) -> Circumcircle {
+    fileprivate func circumcircle(_ i: Point, j: Point, k: Point) -> Circumcircle {
         let x1 = i.x
         let y1 = i.y
         let x2 = j.x
@@ -82,13 +82,13 @@ open class Delaunay: NSObject {
         let dy = y2 - yc
         let rsqr = dx * dx + dy * dy
         
-        return Circumcircle(vertex0: i, vertex1: j, vertex2: k, x: xc, y: yc, rsqr: rsqr)
+        return Circumcircle(p0: i, p1: j, p2: k, x: xc, y: yc, rsqr: rsqr)
     }
     
-    fileprivate func dedup(_ edges: [Vertex]) -> [Vertex] {
+    fileprivate func dedup(_ edges: [Point]) -> [Point] {
         
         var e = edges
-        var a: Vertex?, b: Vertex?, m: Vertex?, n: Vertex?
+        var a: Point?, b: Point?, m: Point?, n: Point?
         
         var j = e.count
         while j > 0 {
@@ -115,7 +115,7 @@ open class Delaunay: NSObject {
         return e
     }
     
-    open func triangulate(_ vertices: [Vertex]) -> [Triangle] {
+    public func triangulate(_ vertices: [Point]) -> [Triangle] {
         
         var _vertices = Array(Set(vertices))
         
@@ -126,7 +126,7 @@ open class Delaunay: NSObject {
         let n = _vertices.count
         var open = [Circumcircle]()
         var completed = [Circumcircle]()
-        var edges = [Vertex]()
+        var edges = [Point]()
         
         var indices = [Int](0..<n).sorted {  _vertices[$0].x < _vertices[$1].x }
         
@@ -155,9 +155,9 @@ open class Delaunay: NSObject {
                 }
                 
                 edges += [
-                    open[j].vertex0, open[j].vertex1,
-                    open[j].vertex1, open[j].vertex2,
-                    open[j].vertex2, open[j].vertex0
+                    open[j].p0, open[j].p1,
+                    open[j].p1, open[j].p2,
+                    open[j].p2, open[j].p0
                 ]
                 
                 open.remove(at: j)
@@ -178,17 +178,17 @@ open class Delaunay: NSObject {
         
         completed += open
         
-        let ignored: Set<Vertex> = [_vertices[n], _vertices[n + 1], _vertices[n + 2]]
+        let ignored: Set<Point> = [_vertices[n], _vertices[n + 1], _vertices[n + 2]]
         
         let results = completed.compactMap { (circumCircle) -> Triangle? in
             
-            let current: Set<Vertex> = [circumCircle.vertex0, circumCircle.vertex1, circumCircle.vertex2]
+            let current: Set<Point> = [circumCircle.p0, circumCircle.p1, circumCircle.p2]
             let intersection = ignored.intersection(current)
             if intersection.count > 0 {
                 return nil
             }
             
-            return Triangle(vertex0: circumCircle.vertex0, vertex1: circumCircle.vertex1, vertex2: circumCircle.vertex2)
+            return Triangle(p0: circumCircle.p0, p1: circumCircle.p1, p2: circumCircle.p2)
         }
         
         return results
