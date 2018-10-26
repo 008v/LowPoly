@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         let startTime = Date()
 
         /* load image */
-        guard let image = UIImage(contentsOfFile: Bundle.main.path(forResource: "pool", ofType: "jpg")!) else {
+        guard let image = UIImage(contentsOfFile: Bundle.main.path(forResource: "cat", ofType: "jpg")!) else {
             return
         }
         guard let imageModel = Image.load(image: image) else {
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
         
         /* pick out some points from the point set */
         var selectedPoints = [Point]()
-        let selectRatio: Int = 30
+        let selectRatio: Int = 20
         let selectCount = points.count / selectRatio
         for i in 0..<selectCount {
             let point = points[i * selectRatio]
@@ -66,9 +66,13 @@ class ViewController: UIViewController {
         print("\(time3.timeIntervalSince1970 - time2.timeIntervalSince1970) <-- choose points")
         
         /* add some randomly generated points into it */
+        let possionPoints = Poisson().discSample(Double(imageModel.width), height: Double(imageModel.height), minDistance: Double(imageModel.width) / 20, newPointsCount: 30)
+        selectedPoints.append(contentsOf: possionPoints)
         
         /* output triangles with Delaunay Triangulation  */
         let triangles = Delaunay().triangulate(selectedPoints)
+        
+        print(triangles.count)
         
         let time4 = Date()
         

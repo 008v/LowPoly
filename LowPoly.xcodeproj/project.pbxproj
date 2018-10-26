@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2437059C217F16450072B1E4 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437059B217F16450072B1E4 /* Image.swift */; };
+		2437059E218028250072B1E4 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437059D218028250072B1E4 /* Grid.swift */; };
+		243705A0218067100072B1E4 /* GridPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437059F218067100072B1E4 /* GridPoint.swift */; };
+		243705A421807B8E0072B1E4 /* me.png in Resources */ = {isa = PBXBuildFile; fileRef = 243705A321807B8E0072B1E4 /* me.png */; };
 		2447F9ED217EDFA700C603EC /* LowPoly.h in Headers */ = {isa = PBXBuildFile; fileRef = 2447F9EB217EDFA700C603EC /* LowPoly.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2447F9FA217EDFE900C603EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447F9F9217EDFE900C603EC /* AppDelegate.swift */; };
 		2447F9FC217EDFE900C603EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2447F9FB217EDFE900C603EC /* ViewController.swift */; };
@@ -28,10 +31,40 @@
 		2447FA22217EE30D00C603EC /* pool.png in Resources */ = {isa = PBXBuildFile; fileRef = 2447FA1F217EE30D00C603EC /* pool.png */; };
 		2447FA23217EE30D00C603EC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2447FA20217EE30D00C603EC /* README.md */; };
 		2447FA24217EE30D00C603EC /* skull.png in Resources */ = {isa = PBXBuildFile; fileRef = 2447FA21217EE30D00C603EC /* skull.png */; };
+		2453F9BF2182F5440077BAD7 /* cat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2453F9BE2182F5440077BAD7 /* cat.jpg */; };
+		2453F9C02182F5670077BAD7 /* LowPoly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2447F9E8217EDFA700C603EC /* LowPoly.framework */; };
+		2453F9C12182F5670077BAD7 /* LowPoly.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2447F9E8217EDFA700C603EC /* LowPoly.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2453F9C22182F5670077BAD7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2447F9DF217EDFA700C603EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2447F9E7217EDFA700C603EC;
+			remoteInfo = LowPoly;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2453F9C42182F5670077BAD7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2453F9C12182F5670077BAD7 /* LowPoly.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2437059B217F16450072B1E4 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		2437059D218028250072B1E4 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		2437059F218067100072B1E4 /* GridPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridPoint.swift; sourceTree = "<group>"; };
+		243705A321807B8E0072B1E4 /* me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me.png; sourceTree = "<group>"; };
 		2447F9E8217EDFA700C603EC /* LowPoly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LowPoly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2447F9EB217EDFA700C603EC /* LowPoly.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LowPoly.h; sourceTree = "<group>"; };
 		2447F9EC217EDFA700C603EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,6 +89,7 @@
 		2447FA1F217EE30D00C603EC /* pool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pool.png; sourceTree = "<group>"; };
 		2447FA20217EE30D00C603EC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2447FA21217EE30D00C603EC /* skull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skull.png; sourceTree = "<group>"; };
+		2453F9BE2182F5440077BAD7 /* cat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2453F9C02182F5670077BAD7 /* LowPoly.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +140,8 @@
 				2437059B217F16450072B1E4 /* Image.swift */,
 				2447FA11217EE03E00C603EC /* Sobel.swift */,
 				2447FA0A217EE03E00C603EC /* Poisson.swift */,
+				2437059D218028250072B1E4 /* Grid.swift */,
+				2437059F218067100072B1E4 /* GridPoint.swift */,
 				2447FA0B217EE03E00C603EC /* Delaunay.swift */,
 				2447FA09217EE03E00C603EC /* Triangle.swift */,
 				2447FA10217EE03E00C603EC /* Edge.swift */,
@@ -123,6 +160,8 @@
 				2447F9FB217EDFE900C603EC /* ViewController.swift */,
 				2447FA1B217EE27900C603EC /* pool.jpg */,
 				2447FA1C217EE27A00C603EC /* skull.jpg */,
+				2453F9BE2182F5440077BAD7 /* cat.jpg */,
+				243705A321807B8E0072B1E4 /* me.png */,
 				2447F9FD217EDFE900C603EC /* Main.storyboard */,
 				2447FA00217EDFEA00C603EC /* Assets.xcassets */,
 				2447FA02217EDFEA00C603EC /* LaunchScreen.storyboard */,
@@ -170,10 +209,12 @@
 				2447F9F3217EDFE900C603EC /* Sources */,
 				2447F9F4217EDFE900C603EC /* Frameworks */,
 				2447F9F5217EDFE900C603EC /* Resources */,
+				2453F9C42182F5670077BAD7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2453F9C32182F5670077BAD7 /* PBXTargetDependency */,
 			);
 			name = LowPolyDemo;
 			productName = LowPolyDemo;
@@ -230,9 +271,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2453F9BF2182F5440077BAD7 /* cat.jpg in Resources */,
 				2447FA04217EDFEA00C603EC /* LaunchScreen.storyboard in Resources */,
 				2447FA1D217EE27A00C603EC /* pool.jpg in Resources */,
 				2447FA01217EDFEA00C603EC /* Assets.xcassets in Resources */,
+				243705A421807B8E0072B1E4 /* me.png in Resources */,
 				2447FA23217EE30D00C603EC /* README.md in Resources */,
 				2447FA1E217EE27A00C603EC /* skull.jpg in Resources */,
 				2447F9FF217EDFE900C603EC /* Main.storyboard in Resources */,
@@ -252,7 +295,9 @@
 				2447FA14217EE03E00C603EC /* Delaunay.swift in Sources */,
 				2447FA19217EE03E00C603EC /* Edge.swift in Sources */,
 				2447FA17217EE03E00C603EC /* Point.swift in Sources */,
+				2437059E218028250072B1E4 /* Grid.swift in Sources */,
 				2447FA12217EE03E00C603EC /* Triangle.swift in Sources */,
+				243705A0218067100072B1E4 /* GridPoint.swift in Sources */,
 				2447FA15217EE03E00C603EC /* Circumcircle.swift in Sources */,
 				2447FA1A217EE03E00C603EC /* Sobel.swift in Sources */,
 				2447FA18217EE03E00C603EC /* Incircle.swift in Sources */,
@@ -271,6 +316,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2453F9C32182F5670077BAD7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2447F9E7217EDFA700C603EC /* LowPoly */;
+			targetProxy = 2453F9C22182F5670077BAD7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2447F9FD217EDFE900C603EC /* Main.storyboard */ = {
@@ -433,6 +486,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.LowPoly;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -461,6 +515,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.LowPoly;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -472,6 +527,7 @@
 		2447FA07217EDFEA00C603EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 55R3QD4LZ2;
@@ -491,6 +547,7 @@
 		2447FA08217EDFEA00C603EC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 55R3QD4LZ2;
